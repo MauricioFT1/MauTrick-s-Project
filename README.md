@@ -1,2 +1,2 @@
-# django-vue
+# MauTrickProject
 
