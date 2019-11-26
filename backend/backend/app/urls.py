@@ -13,7 +13,6 @@ urlpatterns = [
     url(r'championships/edit/(?P<pk>\d+)/$', ChampionshipUpdate.as_view()),
     url(r'peoples/$', PeopleList.as_view()),
     url(r'teams/$', TeamList.as_view()),
-    url(r'editions/$', EditionList.as_view()
-    )
+    url(r'editions/$', EditionList.as_view())
 
 ]
