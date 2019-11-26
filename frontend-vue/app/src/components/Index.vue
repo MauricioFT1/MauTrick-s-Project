@@ -12,38 +12,37 @@
   width: 0;
   height: 0;
   border-left: 1600px solid transparent;
-  border-top: 200px solid white;
+  border-top: 150px solid white;
 }
 </style>
 <template>
-  <div class="fundo2">
-    <!-- <section class="container"> -->
-    <section>
-      <br />
-      <br />
-      <br />
-      <h3 align="center">
-        <v-list-item three-line>
-          <v-list-item-content>
-            <div class="mb-6 texto">
-              <h1>Futebol</h1>
-            </div>
-            <p>
-              O objeto usado é uma bola e o objetivo principal do esporte é a marcação de pontos,
-              que consiste em fazer a bola atravessar a trave adversária, encontrada na extremidade do campo.
-              A instituição internacional responsável pela organização e fiscalização de eventos,
-              bem como a regulação e manutenção das regras do esporte é a
-              <a
-                href="https://www.fifa.com/"
-                target="_blank"
-              >FIFA</a>, Federação Internacional de Futebol.
-            </p>
-          </v-list-item-content>
-        </v-list-item>
-      </h3>
+ <div class="fundo2">
+  <!-- <section class="container"> -->
+  <section>
+    <br />
+    <br />
+    <br />
+    <h3 align="center">
+          <v-list-item three-line>
+            <v-list-item-content>
+              <div class="mb-6 texto">
+                <h1>Futebol</h1>
+              </div>
+              <p>
+                O objeto usado é uma bola e o objetivo principal do esporte é a marcação de pontos,
+                que consiste em fazer a bola atravessar a trave adversária, encontrada na extremidade do campo.
+                A instituição internacional responsável pela organização e fiscalização de eventos,
+                bem como a regulação e manutenção das regras do esporte é a
+                <a
+                  href="https://www.fifa.com/"
+                  target="_blank"
+                >FIFA</a>, Federação Internacional de Futebol.
+              </p>
+            </v-list-item-content>
+          </v-list-item>
+    </h3>
 
-      <v-spacer></v-spacer>
-
+    <v-spacer></v-spacer>
       <v-row align="center" justify="center">
         <v-container fluid>
           <div class="bolakick">
@@ -65,12 +64,8 @@
           <div class="triangulo"></div>
         </v-container>
       </v-row>
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-    </section>
+
+  </section>
   </div>
 </template>
 
@@ -83,20 +78,33 @@ export default {
     return {
       items: [
         {
-          src: "https://wallpapercave.com/wp/wp1956988.jpg"
+          src:
+            "http://www.photobackgroundhd.com/wp-content/uploads/2018/10/lionel-messi-wallpaper-download-high-quality.jpg"
         },
         {
-          src: "https://wallpapercave.com/wp/wp1956988.jpg"
+          src: "../img/copa1958.jpg"
         },
         {
-          src: "https://wallpapercave.com/wp/wp1956988.jpg"
+          src: "https://wallpaperaccess.com/full/493700.jpg"
         },
         {
           src: "https://wallpapercave.com/wp/wp1956988.jpg"
         }
-      ],
-      slides: ["First", "Second", "Third", "Fourth"]
+      ]
     };
+  },
+  mounted() {
+    this.checkAuthenticated();
+  },
+  methods: {
+    checkAuthenticated() {
+      this.$session.start();
+      if (!this.$session.has("token")) {
+        router.push("/login");
+      } else {
+        this.authenticated = true;
+      }
+    }
   }
 };
 </script>

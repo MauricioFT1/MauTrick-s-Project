@@ -13,9 +13,6 @@ text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9,
 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
 
-.teste{
-  background-color: black;
-}
 </style>
 
 <template>
@@ -27,9 +24,7 @@ text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9,
         <v-app id="inspire" dark>
           <v-card>
             <br />
-            <div class="teste">
               <v-data-table :headers="headers" :items="desserts"></v-data-table>
-            </div>
           </v-card>
         </v-app>
       </div>
