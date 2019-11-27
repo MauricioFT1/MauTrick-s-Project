@@ -4,8 +4,8 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import Login from '@/views/Login'
 import Logout from '@/views/Logout'
-import ListChampionships from '@/components/Books/List'
-import EditBook from '@/components/Books/Edit'
+import ListChampionships from '@/components/Championships/List'
+import EditChampionship from '@/components/Championships/Edit'
 import Experiments from '@/components/Experiments'
 import Inicial from '@/components/Inicial'
 import Origem from '@/components/Origem'
@@ -14,6 +14,9 @@ import Brasileirao2018 from '@/components/Brasileirao2018'
 import Brasileirao2008 from '@/components/Brasileirao2008'
 import Regulamento from '@/components/Regulamento'
 import Teste from '@/components/Teste'
+import Teams from '@/components/Teams/List'
+import EditTeam from '@/components/Teams/Edit'
+
 Vue.use(Router)
 
 export default new Router({
@@ -40,9 +43,9 @@ export default new Router({
             component: ListChampionships
         },
         {
-            path: '/books/edit/:id',
-            name: 'EditBook',
-            component: EditBook
+            path: '/championships/edit/:id',
+            name: 'EditChampionship',
+            component: EditChampionship
         },
         {
             path: '/experiments',
@@ -78,6 +81,16 @@ export default new Router({
             path: '/regulamento',
             name: 'Regulamento',
             component: Regulamento
+        },
+        {
+            path: '/teams',
+            name: 'Teams',
+            component: Teams
+        },
+        {
+            path: '/teams/edit/:id',
+            name: 'EditTeam',
+            component: EditTeam
         },
         {
             path: '/teste',

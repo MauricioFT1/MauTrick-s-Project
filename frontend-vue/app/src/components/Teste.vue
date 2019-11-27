@@ -10,7 +10,7 @@
 }
 
 </style>
-<!-- <template>
+<template>
   <div class="black">
       <v-carousel cycle height="700">
       <div class="teste">
@@ -49,4 +49,4 @@ export default {
     };
   },
 }
-</script> -->
+</script> 

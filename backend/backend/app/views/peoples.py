@@ -8,3 +8,8 @@ class PeopleList(generics.ListAPIView):
     queryset = People.objects.all()
     serializer_class = PeopleSerializer
     permission_classes = ()
+
+class PeopleGet(generics.RetrieveAPIView):
+    queryset = People.objects.all()
+    serializer_class = PeopleSerializer
+    permission_classes = ()

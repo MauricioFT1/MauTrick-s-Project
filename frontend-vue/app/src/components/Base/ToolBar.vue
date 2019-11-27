@@ -1,10 +1,11 @@
 <template>
   <div>
     <v-toolbar>
-      <v-app-bar-nav-icon>
-        <img src="/src/img/bola.png" width="40px" alt title="Futebol" />
+      <v-app-bar-nav-icon :to="'/'">
+        <img src="https://imagepng.org/wp-content/uploads/2017/10/bola.png" width="40px" alt title="Futebol" />
       </v-app-bar-nav-icon>
-      <v-toolbar-title></v-toolbar-title>
+
+      
 
       <v-spacer></v-spacer>
 
@@ -35,17 +36,17 @@ export default {
       authenticated: false,
       user: {},
       items: [
-        { title: "Home ", endpoint: "/" },
+        // { title: "Home ", endpoint: "/" },
         { title: "My Account", endpoint: "/user" },
         { title: "Users", endpoint: "/users" },
-        { title: "Books", endpoint: "/books" },
-        { title: "Experiments", endpoint: "/experiments" },
+        { title: "Championships", endpoint: "/championships" },
+        { title: "Teams", endpoint: "/teams" },
         { title: "Origem", endpoint: "/origem" },
         { title: "Copas", endpoint: "/copa" },
         { title: "Brasileirão2018", endpoint: "/brasileirao2018" },
         { title: "Brasileirão2008", endpoint: "/brasileirao2008" },
-        { title: "Regulamento", endpoint: "/regulamento" },
-        { title: "Teste", endpoint: "/teste" }
+        // { title: "Regulamento", endpoint: "/regulamento" },
+        // { title: "Teste", endpoint: "/teste" }
       ]
     };
   },

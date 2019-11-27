@@ -19,9 +19,9 @@
           <v-container>
             <v-row>
               <v-col cols="12">
-                <v-text-field v-model="book.name" label="Título*" hint="Título do livro" required></v-text-field>
+                <v-text-field v-model="championship.name" label="Título*" hint="Título do livro" required></v-text-field>
               </v-col>
-              <v-row class="form-group" v-for="(input,k) in bookauthors" :key="k">
+              <v-row class="form-group" v-for="(input,k) in championshipauthors" :key="k">
                 
               <v-col cols="7">
                 <v-select
@@ -53,13 +53,13 @@
                     >mdi-plus</v-icon>
                     <v-icon 
                       @click="removeauthor(k)"
-                      v-show="k || ( !k && bookauthors.length > 1)">
+                      v-show="k || ( !k && championshipauthors.length > 1)">
                        mdi-minus
                     </v-icon>
               </v-col>
               </v-row>
               <v-col cols="12">
-                <v-text-field v-model="book.description" label="Descrição*" type="text" required></v-text-field>
+                <v-text-field v-model="championship.description" label="Descrição*" type="text" required></v-text-field>
               </v-col>
               <v-col cols="12">
                 <v-select
@@ -68,7 +68,7 @@
                   item-text = "name"
                   label = "Gênero"
                   attach
-                  v-model = "book.genre"
+                  v-model = "championship.genre"
                 >
                 </v-select>
               </v-col>
@@ -90,22 +90,20 @@
 import axios from "axios"
 require('../../assets/site.css');
 export default {
-  name: "CreateBook",
+  name: "CreateChampionship",
   data() {
     return {
       dialog: false,
       genres: [],
       authors: [],
-      book: {},
-      bookauthors: [{
+      championship: {},
+      championshipauthors: [{
         author: "",
         role: 0
       }],
       roles: [
-        {id: 0, role: "Writer"},
-        {id: 1, role: "Translator"},
-        {id: 2, role: "Illustrator"},
-        {id: 3, role: "Editorss"}
+        {id: 0, role: "Nacional"},
+        {id: 1, role: "Internacional"}
       ]
     };
   },
@@ -115,10 +113,10 @@ export default {
   },
   methods: {
     addauthor(index) {
-      this.bookauthors.push({ name: '', role: ''});
+      this.championshipauthors.push({ name: '', role: ''});
     },
     removeauthor(index) {
-      this.bookauthors.splice(index, 1);
+      this.championshipauthors.splice(index, 1);
     },
     getGenres() {
       axios
@@ -148,10 +146,10 @@ export default {
       });
     },
     add() {
-      this.book.authors = this.bookauthors
+      this.championship.authors = this.championshipauthors
       axios
-        .post("http://localhost:8000/api/books/add/",
-          this.book, 
+        .post("http://localhost:8000/api/championships/add/",
+          this.championship, 
           {
             headers: {
               Authorization: `Token ${this.$session.get("token")}`
@@ -160,7 +158,7 @@ export default {
         )
         .then(response => {
           this.dialog = false
-          this.$emit('updateBooks')
+          this.$emit('updateChampionships')
           this.log.console(response)
         });
     }
