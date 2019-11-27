@@ -38,7 +38,7 @@
                     </template>
 
                     <v-card>
-                      <v-card-title class="" primary-title>Copa do mundo de 1958</v-card-title>
+                      <v-card-title primary-title><h2>Copa do mundo de 1958</h2></v-card-title>
                       <br />
                       <v-divider></v-divider>
                       <br />
@@ -93,7 +93,7 @@
                       <v-card-title
                         class=""
                         primary-title
-                      >Copa do mundo de 1970</v-card-title>
+                      ><h2>Copa do mundo de 1970</h2></v-card-title>
                       <br />
                       <v-divider></v-divider>
                       <br />
@@ -151,7 +151,7 @@
                       <v-card-title
                         class=""
                         primary-title
-                      >Copa do mundo de 1994</v-card-title>
+                      ><h2>Copa do mundo de 1994</h2></v-card-title>
                       <br />
                       <v-divider></v-divider>
                       <br>
@@ -202,7 +202,7 @@
                       <v-card-title
                         class=""
                         primary-title
-                      >Copa do mundo de 2002</v-card-title>
+                      ><h2>Copa do mundo de 2002</h2></v-card-title>
                       <br />
                       <v-divider></v-divider>
                       <br>
@@ -256,7 +256,7 @@
                       <v-card-title
                         class=""
                         primary-title
-                      >Copa do mundo de 2014</v-card-title>
+                      ><h2>Copa do mundo de 2014</h2></v-card-title>
                       <br />
                       <v-divider></v-divider>
                       <br>
@@ -313,7 +313,7 @@
                       <v-card-title
                         class=""
                         primary-title
-                      >Copa do mundo de 2018</v-card-title>
+                      ><h2>Copa do mundo de 2018</h2></v-card-title>
                       <br />
                       <v-divider></v-divider>
                       <br>

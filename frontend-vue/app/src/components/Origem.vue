@@ -11,16 +11,25 @@
     0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
     0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
 }
+
+.origem{
+  text-align: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-top: 5%;
+  box-shadow: 0px 0px 8px #343a46;
+  padding: 10px;
+  background-image: url('../img/brasil.jpg');
+  background-repeat: repeat;
+  color: black;
+}
 </style>
 <template>
   <div id="app">
-    <v-parallax src="../img/back.jpg" height="800">
-        <v-card class="mx-auto" width="250">
+    <v-parallax src="../img/back.jpg" height="1500">
+      <div class="origem">
           <h5 class="Titulo" align="center">Origem</h5> 
-        </v-card>
         <br>
-        <v-card class="mx-auto" width="1000">
-          <br>
           <br>
         <p class="mx-12">
           Quase todas as culturas do mundo possuem alguma referência ao futebol. Chineses, japoneses, italianos, gregos antigos, persas, vikings e muitos outros povos já jogavam algum tipo de jogo de bola em tempos muitos distantes. Os chineses, por exemplo, já tinham um jogo parecido há 3.000 anos atrás. Na Grécia antiga e em Roma, os jogos de bola era utilizados para preparar soldados para a guerra. Já na América do Sul e na América Central existiu um jogo chamado "Tlatchi" semelhante ao futebol.
@@ -34,7 +43,13 @@
         <p class="mx-12">
           Depois da Associação Inglesa de Futebol, vieram: a associação escocesa (1873), a associação de Gales (1875) e a irlandesa (1880). Devido à influência britânica na época, o futebol começou a se espalhar por outros países. As seguintes associações (não britânicas) foram: Holanda e Dinamarca (1889), Nova Zelândia (1891), Argentina (1893), Chile (1895), Suíça e Bélgica (1895), Itália (1898), Alemanha e Uruguai (1900), Hungria (1901) e Finlândia (1907). Quando a FIFA foi fundada em Paris, em maio de 1904, havia sete países membros: França, Bélgica, Dinamarca, Holanda, Espanha (representada pelo Madri FC), Suécia e Suíça. A Confederação Brasileira de Futebol surgiu em 1919.
         </p>
-        </v-card>
+        <br>
+        <h3 align="center">Brasil x Hungria 1954</h3>
+        <img class="mx-12" align="center" src="../img/antiga.jpg" alt="">
+        <br>
+        Jovem pan - uol
+
+      </div>
         <!-- <h1 align="center">Origem</h1>
         <br>
         <p class="mx-12">
@@ -49,6 +64,7 @@
         <p class="mx-12">
           Depois da Associação Inglesa de Futebol, vieram: a associação escocesa (1873), a associação de Gales (1875) e a irlandesa (1880). Devido à influência britânica na época, o futebol começou a se espalhar por outros países. As seguintes associações (não britânicas) foram: Holanda e Dinamarca (1889), Nova Zelândia (1891), Argentina (1893), Chile (1895), Suíça e Bélgica (1895), Itália (1898), Alemanha e Uruguai (1900), Hungria (1901) e Finlândia (1907). Quando a FIFA foi fundada em Paris, em maio de 1904, havia sete países membros: França, Bélgica, Dinamarca, Holanda, Espanha (representada pelo Madri FC), Suécia e Suíça. A Confederação Brasileira de Futebol surgiu em 1919.
         </p>-->
+        
     </v-parallax>
   </div>
 </template>
