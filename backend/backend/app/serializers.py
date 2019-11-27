@@ -1,16 +1,14 @@
 from django.db import transaction
 from rest_framework import serializers
-from app.models import (Championship, Edition, EditionChampionship, Team, People)
+from app.models import (Championship, Edition, EditionChampionship, Team, People, Noticia, Brazilian)
 
+class EditionChampionshipSerializer(serializers.HyperlinkedModelSerializer):
+    edition = serializers.ReadOnlyField(source="edition.id")
+    championship = serializers.ReadOnlyField(source="championship.id")
 
-# class BookAuthorSerializer(serializers.HyperlinkedModelSerializer):
-#     id = serializers.ReadOnlyField(source="author.id")
-#     name = serializers.ReadOnlyField(source="author.name")
-
-#     class Meta:
-#         model = BookAuthor
-
-#         fields = ('id', 'name', 'role')
+    class Meta:
+        model = EditionChampionship
+        fields = ('id', 'championship', 'edition')
 
 
 class ChampionshipSerializer(serializers.ModelSerializer):
@@ -51,3 +49,13 @@ class PeopleSerializer(serializers.ModelSerializer):
     class Meta:
         model = People
         fields = ('id', 'name', 'birth')
+
+class NoticiaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Noticia
+        fields = ('id','title', 'link', 'summary', 'image')
+
+class BrazilianSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Brazilian
+        fields = ('id','name', 'score', 'games', 'wins', 'draws', 'loses')

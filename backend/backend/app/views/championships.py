@@ -1,7 +1,7 @@
 from rest_framework import generics, permissions
 
-from app.models import Championship
-from app.serializers import ChampionshipSerializer
+from app.models import Championship, EditionChampionship
+from app.serializers import ChampionshipSerializer, EditionChampionshipSerializer
 
 
 class ChampionshipList(generics.ListAPIView):
@@ -35,4 +35,9 @@ class ChampionshipCreate(generics.CreateAPIView):
 class ChampionshipGet(generics.RetrieveAPIView):
     queryset = Championship.objects.all()
     serializer_class = ChampionshipSerializer
+    permission_classes = ()
+
+class EditionChampionshipList(generics.ListAPIView):
+    queryset = EditionChampionship.objects.all()
+    serializer_class = EditionChampionshipSerializer
     permission_classes = ()

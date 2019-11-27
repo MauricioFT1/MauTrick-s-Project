@@ -1,17 +1,18 @@
 import requests
 from bs4 import BeautifulSoup
+from .models import Brazilian
 
-class Tabela():
-    def __init__(self, name, score, games, wins, draws, loses):
-        self.name = name
-        self.socre = score
-        self.games = games
-        self.wins = wins
-        self.draws = draws
-        self.loses = loses
+# class Tabela():
+#     def __init__(self, name, score, games, wins, draws, loses):
+#         self.name = name
+#         self.socre = score
+#         self.games = games
+#         self.wins = wins
+#         self.draws = draws
+#         self.loses = loses
 
 def montandoTabela():
-    # teams, scores, games, wins, losses, draws = []
+    Brazilian.objects.all().delete()
     List = []
     page = requests.get("https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/tabela/")
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -38,10 +39,16 @@ def montandoTabela():
         # Pegando derrotas
         loses = coluna[8].get_text()
 
-        team = Tabela(name, score, games, wins, draws, loses)
-        List.append(team)
+        team = Brazilian(name=name, 
+            score=int(score), 
+            games=int(games), 
+            wins=int(wins), 
+            draws=int(draws), 
+            loses=int(loses))
+        team.save()
+        List.append(1)
 
-    return List
+    return ""
 
 if __name__ == "__main__":
     montandoTabela()

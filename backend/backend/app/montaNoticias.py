@@ -1,12 +1,13 @@
 import requests
 from bs4 import BeautifulSoup
+from .models import Noticia
 
-class Noticia:
-    def __init__(self, summary, title, link, image):
-        self.link = link
-        self.summary = summary
-        self.title = title
-        self.image = image
+# class Noticia:
+#     def __init__(self, summary, title, link, image):
+#         self.link = link
+#         self.summary = summary
+#         self.title = title
+#         self.image = image
 
     # def setLink(self, link):
     #     self.link = link
@@ -33,6 +34,7 @@ class Noticia:
     #     return self.title
 
 def montandoNoticias():
+    Noticia.objects.all().delete()
     List = []
     page = requests.get("https://globoesporte.globo.com/futebol/")
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -54,14 +56,17 @@ def montandoNoticias():
             summary = summ.get_text()
             
             image = linkImage['src']
-
-            List.append(
-                Noticia(summary,title,link,image)
-                )
-
+            news = Noticia(
+                link=link,
+                title=title,
+                summary=summary,
+                image=image
+            )
+            news.save()
+            List.append(1)
         x += 1
 
-    return List
+    return ""
 
 if __name__ == "__main__":
     montandoNoticias()
