@@ -11,6 +11,7 @@
 
 <template>
   <div class="fundo">
+    
   <v-container class="fill-height" fluid>
       
     <v-spacer></v-spacer>
@@ -19,17 +20,19 @@
         <AlertMsg v-if="errorShow" >
           Login or password wrong
         </AlertMsg>
-        
-        <v-card class="elevation-20">
+        <v-hover v-slot:default="{ hover }">
+        <v-card :elevation="hover ? 16 : 2" class="elevation-20">
           <LoginToolbar />
           <LoginFields ref="formFields"
             @fillCredentials="fillCredentials"
           />          
           <LoginButtons @login="login"/>
         </v-card>
+        </v-hover>
       </v-col>
     </v-row>
   </v-container>
+    
   </div>
 </template>
 
