@@ -3,7 +3,7 @@
   font-family: fantasy;
 }
 .fundo2 {
-  height: 2000px;
+  height: 3000px;
 }
 .bolakick {
   background-color: #ffffff;
@@ -18,10 +18,9 @@
   height: 600px;
   background-image: url("https://brunorabello.com.br/wp-content/uploads/2015/10/steve-jobs.jpg");
   font-size: 16px;
-  background-size: 1300px;
+  background-size: 1200px;
   text-align: center;
 }
-
 </style>
 <template>
   <div class="fundo2">
@@ -56,8 +55,13 @@
           <div class="bolakick">
             <v-row justify="space-around">
               <v-col cols="7">
-                <v-carousel cycle height="500" hide-delimiter-background>
-                  <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src">
+                <v-carousel :show-arrows="false" cycle height="500" hide-delimiters>
+                  <v-carousel-item
+
+                    v-for="(item,i) in items"
+                    :key="i"
+                    :src="item.src"
+                  >
                     <v-row class="fill-height" align="center" justify="center">
                       <div class="display-2">{{ slide }}</div>
                     </v-row>
@@ -73,17 +77,24 @@
         </v-container>
       </v-row>
 
-      <div align="center" class="fraseefeito"></div>
-
       <!-- NOTICIAS COMEÇA AQUI -->
+      <!-- teste -->
       <h1 align="center">
-        NEWS FROM:
-        <a href="https://globoesporte.globo.com/futebol/">globoesporte</a>
+        Notícias de ultima hora!
+        <br />
+        <v-btn href="http://127.0.0.1:8000/api/noticiasmontar/" target="_blank">Atualizar</v-btn>
       </h1>
       <br />
-      <v-layout wrap justify-space-around>
-        <v-flex v-for="noticia in news" v-bind:key="noticia.id">
-          <v-card class="mx-auto" min-width="380" max-width="380" outlined>
+      <div v-for="noticia in news" v-bind:key="noticia.id">
+        <br />
+        <v-hover v-slot:default="{ hover }">
+          <v-card
+            :elevation="hover ? 16 : 1"
+            min-width="1200"
+            max-width="1200"
+            height="300"
+            outlined
+          >
             <div>
               <v-list-item three-line>
                 <v-list-item-content>
@@ -91,34 +102,186 @@
                   <!-- <div class="overline mb-4">
                   <a :href="noticia.link">NOTICIA</a>
                   </div>-->
-
-                  <v-list-item-title class="headline mb-1">TITULO: {{noticia.title}}</v-list-item-title>
-                  <v-list-item-subtitle>RESUMO: {{noticia.summary}}</v-list-item-subtitle>
-                  <v-spacer></v-spacer>
-                  <!-- <v-list-item-subtitle>IMAGEM: {{noticia.image}}</v-list-item-subtitle> -->
-                  <v-list-item-subtitle>
-                    <img :src="noticia.image" width="200px" height="100px" />
-                  </v-list-item-subtitle>
-                  <br />
-                  <p></p>
+                  <v-row align="center" justify="center">
+                    <v-row justify="space-around">
+                      <v-col cols="4">
+                        <a :href="noticia.link" target="_blank">
+                          <img :src="noticia.image" width="350px" height="240px" />
+                        </a>
+                      </v-col>
+                      <v-col cols="8">
+                        <v-list-item-subtitle class="headline mb-1">
+                          <a :href="noticia.link" target="_blank">{{noticia.title}}</a>
+                        </v-list-item-subtitle>
+                        <br />
+                        <br />
+                        <v-list-item-subtitle>
+                          <h4>{{noticia.summary}}</h4>
+                        </v-list-item-subtitle>
+                      </v-col>
+                    </v-row>
+                  </v-row>
                 </v-list-item-content>
-
-                <v-list-item-avatar tile size="80" :src="noticia.image"></v-list-item-avatar>
               </v-list-item>
-
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <div class="overline mb-4">
-                  <a :href="noticia.link"><v-btn>Noticia</v-btn></a>
-                </div>
-                
-                <v-spacer></v-spacer>
-              </v-card-actions>
             </div>
           </v-card>
-        </v-flex>
-      </v-layout>
+        </v-hover>
+      </div>Noticias de:
+      <a href="https://globoesporte.globo.com/futebol/" target="_blank">globoesporte</a>
+
+      <!-- Fim teste -->
+
+      <!-- <h1 align="center">
+        NEWS FROM:
+        <a href="https://globoesporte.globo.com/futebol/" target="_blank">globoesporte</a>
+      </h1>
+      <br />
+
+      <v-layout wrap justify-space-around>
+        <div v-for="noticia in news" v-bind:key="noticia.id">
+          <v-hover v-slot:default="{ hover }">
+            <v-card
+              :elevation="hover ? 16 : 1"
+              class="mx-auto"
+              min-width="380"
+              max-width="380"
+              outlined
+            >
+              <div>
+                <v-list-item three-line>
+                  <v-list-item-content>
+                    <v-list-item-title class="headline mb-1">TITULO: {{noticia.title}}</v-list-item-title>
+                    <v-list-item-subtitle>RESUMO: {{noticia.summary}}</v-list-item-subtitle>
+                    <v-spacer></v-spacer>
+                    <v-list-item-subtitle>
+                      <img :src="noticia.image" width="200px" height="100px" />
+                    </v-list-item-subtitle>
+                    <br />
+                    <p></p>
+                  </v-list-item-content>
+
+                  <v-list-item-avatar tile size="80" :src="noticia.image"></v-list-item-avatar>
+                </v-list-item>
+
+                <v-card-actions>
+                  <v-spacer></v-spacer>
+                  <div class="overline mb-4">
+                    <a :href="noticia.link">
+                      <v-btn>Noticia</v-btn>
+                    </a>
+                  </div>
+
+                  <v-spacer></v-spacer>
+                </v-card-actions>
+              </div>
+            </v-card>
+          </v-hover>
+        </div>
+      </v-layout>-->
+
       <!-- NOTICIAS ACABA AQUI -->
+      <br />
+      <br />
+      <br />
+      <br />
+
+      <!-- Frase de efeito -->
+      <div align="center" class="fraseefeito"></div>
+      <!-- FIm frase de efeito -->
+
+      <!-- Dropdown -->
+      <div class="text-center">
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-btn dark v-on="on">Links do curso</v-btn>
+          </template>
+          <v-list class="dropdown">
+            <v-list-item-title>
+              Endereço: Rodovia BR 280 - km 27
+              <br />Cx. Postal 21 - CEP 89245-000
+              <br />Araquari - SC - Fone (47)
+              3803-7200
+              <br />
+
+              <a href="https://araquari.ifc.edu.br/" target="_blank">
+                Instituto Federal Catarinense campus
+                Araquari
+              </a>
+              <br />Site do Professor:
+              <a
+                href="https://sites.google.com/view/eduardodasilva"
+                target="_blank"
+              >Eduardo da Silva</a>
+              <br />Site da Materia:
+              <a
+                href="https://sites.google.com/view/eduardodasilva/ensino/desenvolvimento-web-ii"
+                target="_blank"
+              >Desenvolvimento Web II</a>
+            </v-list-item-title>
+          </v-list>
+        </v-menu>
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-btn dark v-on="on">Links do curso</v-btn>
+          </template>
+          <v-list class="dropdown">
+            <v-list-item-title>
+              Endereço: Rodovia BR 280 - km 27
+              <br />Cx. Postal 21 - CEP 89245-000
+              <br />Araquari - SC - Fone (47)
+              3803-7200
+              <br />
+
+              <a href="https://araquari.ifc.edu.br/" target="_blank">
+                Instituto Federal Catarinense campus
+                Araquari
+              </a>
+              <br />Site do Professor:
+              <a
+                href="https://sites.google.com/view/eduardodasilva"
+                target="_blank"
+              >Eduardo da Silva</a>
+              <br />Site da Materia:
+              <a
+                href="https://sites.google.com/view/eduardodasilva/ensino/desenvolvimento-web-ii"
+                target="_blank"
+              >Desenvolvimento Web II</a>
+            </v-list-item-title>
+          </v-list>
+        </v-menu>
+        <v-divider vertical></v-divider>
+
+        <v-menu offset-y>
+          <template v-slot:activator="{ on }">
+            <v-btn dark v-on="on">Links do curso</v-btn>
+          </template>
+          <v-list class="dropdown">
+            <v-list-item-title>
+              Endereço: Rodovia BR 280 - km 27
+              <br />Cx. Postal 21 - CEP 89245-000
+              <br />Araquari - SC - Fone (47)
+              3803-7200
+              <br />
+
+              <a href="https://araquari.ifc.edu.br/" target="_blank">
+                Instituto Federal Catarinense campus
+                Araquari
+              </a>
+              <br />Site do Professor:
+              <a
+                href="https://sites.google.com/view/eduardodasilva"
+                target="_blank"
+              >Eduardo da Silva</a>
+              <br />Site da Materia:
+              <a
+                href="https://sites.google.com/view/eduardodasilva/ensino/desenvolvimento-web-ii"
+                target="_blank"
+              >Desenvolvimento Web II</a>
+            </v-list-item-title>
+          </v-list>
+        </v-menu>
+      </div>
+      <!-- Fim dropdown -->
     </section>
   </div>
 </template>
@@ -136,16 +299,19 @@ export default {
       items: [
         {
           src:
-            "http://www.photobackgroundhd.com/wp-content/uploads/2018/10/lionel-messi-wallpaper-download-high-quality.jpg"
+            "https://media.istockphoto.com/photos/professional-football-soccer-player-isolated-white-background-picture-id959488590"
         },
         {
-          src: "https://wallpaperaccess.com/full/493700.jpg"
+          src:
+            "https://image.freepik.com/fotos-gratis/homem-de-jogador-de-futebol-americano-afro-sobre-fundo-branco-isolado_1368-42682.jpg"
         },
         {
-          src: "https://wallpaperaccess.com/full/493700.jpg"
+          src:
+            "https://media.istockphoto.com/photos/professional-african-football-soccer-player-isolated-on-white-picture-id1127789263"
         },
         {
-          src: "https://wallpapercave.com/wp/wp1956988.jpg"
+          src:
+            "https://image.freepik.com/fotos-gratis/homem-de-jogador-de-futebol-americano-afro-sobre-fundo-branco-isolado_1368-42678.jpg"
         }
       ]
     };
