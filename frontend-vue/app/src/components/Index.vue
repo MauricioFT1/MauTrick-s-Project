@@ -27,8 +27,6 @@
     <!-- <section class="container"> -->
     <section>
       <br />
-      <br />
-      <br />
       <h3 align="center">
         <v-list-item three-line>
           <v-list-item-content>
@@ -326,7 +324,7 @@ export default {
     all() {
       axios
         .request({
-          baseURL: "http://127.0.0.1:8000/",
+          baseURL: "http://127.0.0.1:8000",
           method: "get",
           url: "/api/noticiasmontar/"
         })

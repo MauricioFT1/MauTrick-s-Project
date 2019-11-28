@@ -44,7 +44,7 @@ tr:nth-child(even) {
           <br />
           <table>
             <tr>
-              <th>Pocisão</th>
+              <th>Posição</th>
               <th>Pontos</th>
               <th>Jogos</th>
               <th>Vitórias</th>
@@ -81,7 +81,7 @@ export default {
       items: [],
       headers: [
         {
-          text: "Pocisão ",
+          text: "Posição ",
           align: "left",
           sortable: false,
           value: "name"

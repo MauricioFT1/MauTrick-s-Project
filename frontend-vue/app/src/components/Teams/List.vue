@@ -13,7 +13,8 @@
           >
             <v-list-item three-line>
               <v-list-item-content>
-                <div class="overline mb-4">{{team.coach}}</div>
+                <button v-on:click="getCoach(team.coach)">Técnico: {{authors.name}}</button>
+                <!-- <div class="overline mb-4" @click="getCoach(team.coach)">>{{team.coach}}</div> -->
                 <v-list-item-title class="headline mb-1">{{team.name}}</v-list-item-title>
                 <v-list-item-subtitle>{{team.stadium}}</v-list-item-subtitle>
                 <br />
@@ -68,6 +69,7 @@ export default {
   name: "ListTeams",
   data() {
     return {
+      authors: [],
       teams: []
     };
   },
@@ -105,9 +107,9 @@ export default {
     getCoach(coach) {
       axios
         .request({
-          baseURL: "http://localhost:8000",
+          baseURL: "http://127.0.0.1:8000",
           method: "get",
-          url: "/api/peoples/`${coach.id}`"
+          url: `/api/peoples/get/${coach}`
         })
         .then(response => {
           this.authors = response.data;
