@@ -42,7 +42,7 @@ def montandoNoticias():
     # Então ele faz uma lista com elas(find_all no feed-item)
     noticias = soup.find('div', class_='bastian-page').find_all('div', class_="bastian-feed-item")
     
-    x = 2 # Começa no 2 porque são o que interessa kk
+    x = 0 # Começa no 2 porque são o que interessa kk
     while len(List) != 3: # Só para de adicinar quando tiver 3 notícias
         linkImage = noticias[x].find('img', class_="bstn-fd-picture-image")
         summ = noticias[x].find('div', class_="feed-post-body-resumo")
@@ -56,11 +56,15 @@ def montandoNoticias():
             summary = summ.get_text()
             
             image = linkImage['src']
+
+            time = noticias[x].find('span', class_="feed-post-datetime").get_text()
+            
             news = Noticia(
                 link=link,
                 title=title,
                 summary=summary,
                 image=image
+                
             )
             news.save()
             List.append(1)

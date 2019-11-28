@@ -10,6 +10,7 @@ import Experiments from '@/components/Experiments'
 import Inicial from '@/components/Inicial'
 import Origem from '@/components/Origem'
 import Copas from '@/components/Copas'
+import Brasileirao2019 from '@/components/Brasileirao2019'
 import Brasileirao2018 from '@/components/Brasileirao2018'
 import Brasileirao2008 from '@/components/Brasileirao2008'
 import Regulamento from '@/components/Regulamento'
@@ -66,6 +67,11 @@ export default new Router({
             path: '/copa',
             name: 'Copas',
             component: Copas
+        },
+        {
+            path: '/brasileirao2019',
+            name: 'Brasileirao2019',
+            component: Brasileirao2019
         },
         {
             path: '/brasileirao2018',
