@@ -58,4 +58,4 @@ class NoticiaSerializer(serializers.ModelSerializer):
 class BrazilianSerializer(serializers.ModelSerializer):
     class Meta:
         model = Brazilian
-        fields = ('id','name', 'score', 'games', 'wins', 'draws', 'loses')
+        fields = ('name', 'score', 'games', 'wins', 'draws', 'loses')

@@ -16,12 +16,10 @@
 }
 .fraseefeito {
   height: 600px;
-
   background-image: url("https://brunorabello.com.br/wp-content/uploads/2015/10/steve-jobs.jpg");
   font-size: 16px;
   background-size: 1300px;
   text-align: center;
-
 }
 </style>
 <template>
@@ -77,17 +75,60 @@
       <div align="center" class="fraseefeito"></div>
 
 
+      <!-- NOTICIAS COMEÇA AQUI -->
+      <h1 align="center">NEWS FROM: <a href="https://globoesporte.globo.com/futebol/">globoesporte</a></h1>
+      <br>
+    <v-layout wrap justify-space-around>
+          <v-flex v-for="noticia in news" v-bind:key="noticia.id" >
+          <v-card
+      class="mx-auto"
+      min-width="380"
+      max-width="380"
+      outlined
+    >
+      <v-list-item three-line>
+        <v-list-item-content>
+          <div class="overline mb-4">LINK: {{noticia.link}}</div>
+          <v-list-item-title class="headline mb-1">TITULO: {{noticia.title}}</v-list-item-title>
+          <v-list-item-subtitle>RESUMO: {{noticia.summary}}</v-list-item-subtitle>
+          <v-spacer></v-spacer> 
+          <v-list-item-subtitle>IMAGEM: {{noticia.image}}</v-list-item-subtitle>
+          <br>
+          <p></p>
+        </v-list-item-content>
+        <v-list-item-avatar
+          tile
+          size="80"
+          color="grey"
+        > 
+        </v-list-item-avatar>
+      </v-list-item>
+  
+      <v-card-actions>
+        <v-spacer></v-spacer>
+          <v-btn>MUDA ISSO KKK</v-btn>
+          <v-spacer></v-spacer>
+      </v-card-actions>
+    </v-card>
+       </v-flex>
+      </v-layout>
+<!-- NOTICIAS ACABA AQUI -->
+
+
     </section>
   </div>
 </template>
 
+
 <script>
-import router from "../router";
+import axios from "axios";
+import router from "@/router/"
 
 export default {
   name: "Index",
   data() {
     return {
+      news: [],
       items: [
         {
           src:
@@ -107,8 +148,24 @@ export default {
   },
   mounted() {
     this.checkAuthenticated();
+  }
+  ,
+  created() {
+    this.all();
   },
   methods: {
+    all() {
+      axios
+        .request({
+          baseURL: "http://127.0.0.1:8000/",
+          method: "get",
+          url: "/api/noticiasmontar/"
+        })
+        .then(response => {
+          this.news = response.data
+          console.log(response)
+        });
+    },
     checkAuthenticated() {
       this.$session.start();
       if (!this.$session.has("token")) {
@@ -117,6 +174,5 @@ export default {
         this.authenticated = true;
       }
     }
-  }
-};
+  }}
 </script>

@@ -101,12 +101,12 @@ export default {
           });
       }
     },
-    getCoach() {
+    getCoach(coach) {
       axios
       .request({
         baseURL: "http://localhost:8000",
         method: "get",
-        url: "/api/peoples/"
+        url: "/api/peoples/`${coach.id}`"
       })
       .then(response => {
         this.authors = response.data
