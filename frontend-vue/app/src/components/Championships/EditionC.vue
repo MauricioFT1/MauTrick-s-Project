@@ -42,7 +42,7 @@
             <v-btn
               color="primary"
               text
-              @click="dialog = false"
+              @click="dialog=false"
             >
               Fechar
             </v-btn>

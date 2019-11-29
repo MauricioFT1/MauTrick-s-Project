@@ -1,9 +1,3 @@
-<style>
-.backtimes{
-  color: black;
-}
-</style>
-
 <template>
 <v-parallax src="../../img/back.jpg" height="1900">
   <v-container fluid grid-list-xl>

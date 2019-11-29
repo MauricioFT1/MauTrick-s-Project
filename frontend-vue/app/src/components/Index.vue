@@ -25,25 +25,21 @@
   /* https://www.belasmensagens.com.br/wp-content/uploads/1970/01/fazer-mil-gols-400x300.jpg */
 }
 
-.fraseprincipal{
+.fraseprincipal {
   font-size: 30px;
-
 }
 
-.testenoticias{
+.testenoticias {
   margin-left: 100px;
 }
 
 .noticiasde {
-  margin-left: 1120px; 
+  margin-left: 1120px;
 }
 
 .noticiasdeTerra {
-  margin-left: 1095px; 
+  margin-left: 1095px;
 }
-
-  
-  
 </style>
 <template>
   <div class="fundo2">
@@ -77,12 +73,7 @@
             <v-row justify="space-around">
               <v-col cols="7">
                 <v-carousel :show-arrows="false" cycle height="500" hide-delimiters>
-                  <v-carousel-item
-
-                    v-for="(item,i) in items"
-                    :key="i"
-                    :src="item.src"
-                  >
+                  <v-carousel-item v-for="(item,i) in items" :key="i" :src="item.src">
                     <v-row class="fill-height" align="center" justify="center">
                       <div class="display-2">{{ slide }}</div>
                     </v-row>
@@ -99,12 +90,16 @@
       </v-row>
 
       <!-- NOTICIAS COMEÇA AQUI -->
-      
+
       <h1 align="center">
         Notícias de ultima hora!
         <br />
-        <v-btn title="Atualizar Noticias" href="http://127.0.0.1:8000/api/noticiasmontar/" target="_blank">
-        <v-icon icon>mdi-refresh</v-icon>
+        <v-btn
+          title="Atualizar Noticias"
+          href="http://127.0.0.1:8000/api/noticiasmontar/"
+          target="_blank"
+        >
+          <v-icon icon>mdi-refresh</v-icon>
         </v-btn>
       </h1>
       <br />
@@ -151,13 +146,12 @@
           </v-card>
         </v-hover>
       </div>
-      
+
       <div class="noticiasde">
-      Noticias de:
-      <a  href="https://globoesporte.globo.com/futebol/" target="_blank">globoesporte</a>
+        Noticias de:
+        <a href="https://globoesporte.globo.com/futebol/" target="_blank">globoesporte</a>
       </div>
 
-      
       <!-- NOTICIAS ACABA AQUI -->
 
       <br />
@@ -166,25 +160,29 @@
       <br />
 
       <!-- Frase de efeito -->
-      <div class="fraseefeito"> 
-        <br><br><br><br><br><br>
-        <div class="fraseprincipal">"O dificil, o extraordinario, não é fazer mil gols como Pelé. É fazer um gol como Pelé."</div>
-        <br>
-        - Carlos Drummond de Andrade -
+      <div class="fraseefeito">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <div
+          class="fraseprincipal"
+        >"O dificil, o extraordinario, não é fazer mil gols como Pelé. É fazer um gol como Pelé."</div>
+        <br />- Carlos Drummond de Andrade -
       </div>
       <!-- FIm frase de efeito -->
 
-      <br>
-      <br>
-      
+      <br />
+      <br />
+
       <!-- Dropdown -->
-      <div class="text-center">
-        <v-menu offset-y>
-          <template v-slot:activator="{ on }">
-            <v-btn dark v-on="on">Links do curso</v-btn>
-          </template>
-          <v-list class="dropdown">
-            <v-list-item-title>
+      <v-row justify="center">
+        <v-expansion-panels>
+          <v-expansion-panel style="max-width:400px;">
+            <v-expansion-panel-header>Links do curso</v-expansion-panel-header>
+            <v-expansion-panel-content>
               Endereço: Rodovia BR 280 - km 27
               <br />Cx. Postal 21 - CEP 89245-000
               <br />Araquari - SC - Fone (47)
@@ -205,72 +203,17 @@
                 href="https://sites.google.com/view/eduardodasilva/ensino/desenvolvimento-web-ii"
                 target="_blank"
               >Desenvolvimento Web II</a>
-            </v-list-item-title>
-          </v-list>
-        </v-menu>
-        <br>
-        <br><br><br><br>
-        <!-- <v-menu offset-y>
-          <template v-slot:activator="{ on }">
-            <v-btn dark v-on="on">Mauricio</v-btn>
-          </template>
-          <v-list class="dropdown">
-            <v-list-item-title>
-              Endereço: Rodovia BR 280 - km 27
-              <br />Cx. Postal 21 - CEP 89245-000
-              <br />Araquari - SC - Fone (47)
-              3803-7200
-              <br />
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
+      </v-row>
 
-              <a href="https://araquari.ifc.edu.br/" target="_blank">
-                Instituto Federal Catarinense campus
-                Araquari
-              </a>
-              <br />Site do Professor:
-              <a
-                href="https://sites.google.com/view/eduardodasilva"
-                target="_blank"
-              >Eduardo da Silva</a>
-              <br />Site da Materia:
-              <a
-                href="https://sites.google.com/view/eduardodasilva/ensino/desenvolvimento-web-ii"
-                target="_blank"
-              >Desenvolvimento Web II</a>
-            </v-list-item-title>
-          </v-list>
-        </v-menu>
-        <v-divider vertical></v-divider>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
 
-        <v-menu offset-y>
-          <template v-slot:activator="{ on }">
-            <v-btn dark v-on="on">Patrick</v-btn>
-          </template>
-          <v-list class="dropdown">
-            <v-list-item-title>
-              Endereço: Rodovia BR 280 - km 27
-              <br />Cx. Postal 21 - CEP 89245-000
-              <br />Araquari - SC - Fone (47)
-              3803-7200
-              <br />
-
-              <a href="https://araquari.ifc.edu.br/" target="_blank">
-                Instituto Federal Catarinense campus
-                Araquari
-              </a>
-              <br />Site do Professor:
-              <a
-                href="https://sites.google.com/view/eduardodasilva"
-                target="_blank"
-              >Eduardo da Silva</a>
-              <br />Site da Materia:
-              <a
-                href="https://sites.google.com/view/eduardodasilva/ensino/desenvolvimento-web-ii"
-                target="_blank"
-              >Desenvolvimento Web II</a>
-            </v-list-item-title>
-          </v-list>
-        </v-menu> -->
-      </div>
       <!-- Fim dropdown -->
     </section>
   </div>
