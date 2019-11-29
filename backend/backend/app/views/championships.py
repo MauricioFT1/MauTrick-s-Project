@@ -41,3 +41,8 @@ class EditionChampionshipList(generics.ListAPIView):
     queryset = EditionChampionship.objects.all()
     serializer_class = EditionChampionshipSerializer
     permission_classes = ()
+
+class EditionChampionshipGet(generics.RetrieveAPIView):
+    queryset = EditionChampionship.objects.all()
+    serializer_class = EditionChampionshipSerializer
+    permission_classes = ()

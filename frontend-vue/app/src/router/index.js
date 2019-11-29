@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Index from '@/components/Index'
 import Login from '@/views/Login'
 import Logout from '@/views/Logout'
+import EditionC from '@/components/Championships/EditionC'
 import ListChampionships from '@/components/Championships/List'
 import EditChampionship from '@/components/Championships/Edit'
 import Experiments from '@/components/Experiments'
@@ -37,6 +38,11 @@ export default new Router({
             path: '/logout',
             name: 'Logout',
             component: Logout
+        },
+        {
+            path: '/editionc',
+            name: 'EditionC',
+            component: EditionC
         },
         {
             path: '/championships',

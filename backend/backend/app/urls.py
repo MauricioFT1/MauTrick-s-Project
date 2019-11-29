@@ -2,10 +2,10 @@ from django.conf.urls import url
 
 from .views import (
     ChampionshipCreate, ChampionshipDestroy, ChampionshipGet, ChampionshipList, ChampionshipUpdate,
-    EditionChampionshipList,
+    EditionChampionshipList, EditionChampionshipGet,
     PeopleList, PeopleGet,
     TeamList, TeamDestroy, TeamGet, TeamUpdate,
-    EditionList,
+    EditionList, EditionGet,
     NoticiaList,
     BrazilianList
 )
@@ -28,8 +28,10 @@ urlpatterns = [
     url(r'teams/edit/(?P<pk>\d+)/$', TeamUpdate.as_view()),
 
     url(r'editions/$', EditionList.as_view()),
+    url(r'editions/get/(?P<pk>\d+)/$', EditionGet.as_view()),
 
     url(r'editionschamp/$', EditionChampionshipList.as_view()),
+    url(r'editionschamp/get/(?P<pk>\d+)/$', EditionChampionshipGet.as_view()),
 
     url(r'noticiasmontar/$', NoticiaList.as_view(), montandoNoticias()),
 

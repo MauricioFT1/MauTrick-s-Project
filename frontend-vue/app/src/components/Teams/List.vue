@@ -13,7 +13,7 @@
           >
             <v-list-item three-line>
               <v-list-item-content>
-                <button v-on:click="getCoach(team.coach)">Técnico: {{authors.name}}</button>
+                <button v-on:click="getCoach(team.coach)"> Técnico: <div v-if="coachs.id == team.coach">{{coachs.name}}</div></button>
                 <!-- <div class="overline mb-4" @click="getCoach(team.coach)">>{{team.coach}}</div> -->
                 <v-list-item-title class="headline mb-1">{{team.name}}</v-list-item-title>
                 <v-list-item-subtitle>{{team.stadium}}</v-list-item-subtitle>
@@ -24,7 +24,7 @@
           tile
           size="80"
           color="grey"
-              ></v-list-item-avatar>-->
+              ></v-list-item-avatar> -->
             </v-list-item>
 
             <v-card-actions>
@@ -69,7 +69,7 @@ export default {
   name: "ListTeams",
   data() {
     return {
-      authors: [],
+      coachs: [],
       teams: []
     };
   },
@@ -112,7 +112,7 @@ export default {
           url: `/api/peoples/get/${coach}`
         })
         .then(response => {
-          this.authors = response.data;
+          this.coachs = response.data;
           console.log(response);
         });
     },

@@ -32,7 +32,7 @@
           </v-list>
         </v-menu>
       </div>
-
+    <v-divider vertical></v-divider>
       <v-spacer></v-spacer>
 
       <v-btn icon to="/logout" v-if="authenticated">
