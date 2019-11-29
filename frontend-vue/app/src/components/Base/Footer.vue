@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       icons: [
-        { title: "github", icone: "mdi-github-circle", link: "https://github.com/MauricioFT1/django-vue" },
+        { title: "GitHub", icone: "mdi-github-circle", link: "https://github.com/MauricioFT1/django-vue" },
         { title: "IFC", icone: "mdi-city", link: "http://ifc.edu.br/" },
         { title: "Prof. Eduardo", icone: "mdi-account", link: "https://sites.google.com/view/eduardodasilva" },
         { title: "Materia Dev Web II", icone: "mdi-book-open", link: "https://sites.google.com/view/eduardodasilva/ensino/desenvolvimento-web-ii" },

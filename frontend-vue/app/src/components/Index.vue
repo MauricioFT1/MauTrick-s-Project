@@ -38,6 +38,10 @@
   margin-left: 1120px; 
 }
 
+.noticiasdeTerra {
+  margin-left: 1095px; 
+}
+
   
   
 </style>

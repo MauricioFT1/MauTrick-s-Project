@@ -49,9 +49,9 @@ th {
               <th>Derrotas</th>
             </tr>
           </table>
-          <table v-for="team in items" v-bind:key="team.score">
+          <table v-for="(team,i) in items" v-bind:key="team.score">
             <tr>
-              <th>{{team.name}}</th>
+              <th>{{i+1}}. {{team.name}}</th>
               <th>{{team.score}}</th>
               <th>{{team.games}}</th>
               <th>{{team.wins}}</th>
@@ -59,8 +59,14 @@ th {
               <th>{{team.loses}}</th>
             </tr>
           </table>
+          <div class="noticiasdeTerra">
+          Tabela de: 
+        <a href="https://www.terra.com.br/esportes/futebol/brasileiro-serie-a/tabela/" target="_blank">Terra</a>
+        </div>
           <!-- </v-card> -->
         </v-app>
+        
+        
       </div>
     </v-parallax>
   </div>
