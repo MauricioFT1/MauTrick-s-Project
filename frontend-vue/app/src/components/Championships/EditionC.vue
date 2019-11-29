@@ -10,15 +10,15 @@
         <p>Data de começo: {{edicao.date}}</p>
         <p>Número da edição: {{edicao.number}}</p>
         <p>Participantes: </p>
-        <v-text v-for="part in edicao.participants" v-bind:key="part.id">
+        <v-text v-for="(part,i) in edicao.nameParticipants" v-bind:key="part.id">
         <li>Time {{part}}
           <v-dialog
         v-model="dialog"
         width="500"
       >
           <template v-slot:activator="{ on }">
-          <v-btn class="ma-2" text v-on="on" @click="findTeam(part)">
-          <v-icon class="mdi-information-outline">mdi-information-outline</v-icon>
+          <v-btn class="ma-2" text v-on="on" @click="findTeam(i+1)">
+          <v-icon>mdi-information-outline</v-icon>
             INFO
           </v-btn>
           </template>
@@ -77,8 +77,6 @@ export default {
   },
   created() {
     this.all();
-    // this.findTeam();
-    // this.findEdition(editionsChamp.edition);
   },
   methods: {
     all() {

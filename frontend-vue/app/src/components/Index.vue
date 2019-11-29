@@ -228,6 +228,7 @@ export default {
   name: "Index",
   data() {
     return {
+      slide: '',
       news: [],
       items: [
         {
@@ -251,9 +252,7 @@ export default {
   },
   mounted() {
     this.checkAuthenticated();
-  },
-  created() {
-    this.all();
+    this.all()
   },
   methods: {
     all() {

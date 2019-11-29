@@ -32,7 +32,7 @@
             </v-list-item>
 
             <v-card-actions>
-              <v-btn>Campeonatos</v-btn>
+              <v-btn :to="'/editionc'">Campeonatos</v-btn>
               <v-spacer></v-spacer>
               <v-btn class="ma-2" text icon color="red lighten-2">
                 <v-icon class="delete" @click="deleteTeam(team)"></v-icon>

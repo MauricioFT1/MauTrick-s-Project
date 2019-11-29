@@ -42,7 +42,7 @@ class TeamSerializer(serializers.ModelSerializer):
 class EditionSerializer(serializers.ModelSerializer):
     class Meta:
         model = Edition
-        fields = ('id', 'date', 'participants', 'number')
+        fields = ('id', 'date', 'participants', 'nameParticipants', 'number')
 
 
 class PeopleSerializer(serializers.ModelSerializer):

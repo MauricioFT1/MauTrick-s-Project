@@ -11,6 +11,14 @@ class Edition(models.Model):
     def __str__(self):
         return 'ID: [{}] - Data: [{}]'.format(self.id, self.date)
 
+    @property
+    def nameParticipants(self):
+        names = []
+        for p in self.participants.all():
+            names.append(p.name)
+        return names
+
+
     class Meta:
         db_table = ''
         managed = True

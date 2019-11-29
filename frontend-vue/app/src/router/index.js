@@ -7,8 +7,6 @@ import Logout from '@/views/Logout'
 import EditionC from '@/components/Championships/EditionC'
 import ListChampionships from '@/components/Championships/List'
 import EditChampionship from '@/components/Championships/Edit'
-import Experiments from '@/components/Experiments'
-import Inicial from '@/components/Inicial'
 import Origem from '@/components/Origem'
 import Copas from '@/components/Copas'
 import Brasileirao2019 from '@/components/Brasileirao2019'
@@ -53,16 +51,6 @@ export default new Router({
             path: '/championships/edit/:id',
             name: 'EditChampionship',
             component: EditChampionship
-        },
-        {
-            path: '/experiments',
-            name: 'Experiments',
-            component: Experiments
-        },
-        {
-            path: '/inicial',
-            name: 'Inicial',
-            component: Inicial
         },
         {
             path: '/origem',

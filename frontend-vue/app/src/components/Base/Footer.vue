@@ -3,8 +3,8 @@
     <v-card flat tile class="lighten-1 white--text text-center">
       <v-card-text>
         <v-btn
-          v-for="icon in icons"
-          :key="icon"
+          v-for="(icon, i) in icons" 
+          :key="i"
           class="mx-4 white--text"
           icon
           :href="icon.link"
