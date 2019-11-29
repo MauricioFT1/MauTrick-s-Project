@@ -11,7 +11,7 @@
         <p>Número da edição: {{edicao.number}}</p>
         <p>Participantes: </p>
         <v-text v-for="part in edicao.participants" v-bind:key="part.id">
-        <li>{{part}}
+        <li>Time {{part}}
           <v-dialog
         v-model="dialog"
         width="500"
@@ -24,12 +24,11 @@
           </template>
          <v-card>
           <v-card-title
-            class="headline grey lighten-2"
             primary-title
           >
             {{team.name}}
           </v-card-title>
-  
+          <v-divider></v-divider>
           <v-card-text>
             <br>
            <p>Estádio: {{team.stadium}}</p>
@@ -45,7 +44,7 @@
               text
               @click="dialog = false"
             >
-              I accept
+              Fechar
             </v-btn>
           </v-card-actions>
         </v-card>
@@ -57,7 +56,6 @@
         
         <v-divider></v-divider>
       </div>
-      <CreateChampionships @updateChampionships="all"></CreateChampionships>
   </v-container>
 </template>
 

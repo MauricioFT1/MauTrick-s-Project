@@ -13,12 +13,15 @@
           >
             <v-list-item three-line>
               <v-list-item-content>
-                <button v-on:click="getCoach(team.coach)"> Técnico: <div v-if="coachs.id == team.coach">{{coachs.name}}</div></button>
+                
                 <!-- <div class="overline mb-4" @click="getCoach(team.coach)">>{{team.coach}}</div> -->
                 <v-list-item-title class="headline mb-1">{{team.name}}</v-list-item-title>
                 <v-list-item-subtitle>{{team.stadium}}</v-list-item-subtitle>
                 <br />
                 <p>{{team.foundation}}</p>
+                <br>
+                <br>
+                <button v-on:click="getCoach(team.coach)"> Técnico: <div v-if="coachs.id == team.coach">{{coachs.name}}</div></button>
               </v-list-item-content>
               <!-- <v-list-item-avatar
           tile

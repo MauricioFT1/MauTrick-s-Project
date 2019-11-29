@@ -3,7 +3,7 @@
   font-family: fantasy;
 }
 .fundo2 {
-  height: 3000px;
+  height: 2700px;
 }
 .bolakick {
   background-color: #ffffff;
@@ -15,11 +15,31 @@
   border-top: 150px solid white;
 }
 .fraseefeito {
-  margin-left: 250px;
-  height: 500px;
-  background-image: url("https://www.belasmensagens.com.br/wp-content/uploads/1970/01/fazer-mil-gols-400x300.jpg");
-  background-size: 800px;
+  height: 400px;
+  width: 1440px;
+  background-image: url("https://image.freepik.com/free-photo/chalkboard-blackboard-dark-wallpaper-background_28629-1125.jpg");
+  text-align: center;
+  background-size: 1440px;
+  font-family: "FreeMono", monospace;
+  font-weight: bold;
+  /* https://www.belasmensagens.com.br/wp-content/uploads/1970/01/fazer-mil-gols-400x300.jpg */
 }
+
+.fraseprincipal{
+  font-size: 30px;
+
+}
+
+.testenoticias{
+  margin-left: 100px;
+}
+
+.noticiasde {
+  margin-left: 1120px; 
+}
+
+  
+  
 </style>
 <template>
   <div class="fundo2">
@@ -75,16 +95,17 @@
       </v-row>
 
       <!-- NOTICIAS COMEÇA AQUI -->
-      <!-- teste -->
+      
       <h1 align="center">
         Notícias de ultima hora!
         <br />
         <v-btn title="Atualizar Noticias" href="http://127.0.0.1:8000/api/noticiasmontar/" target="_blank">
-        <v-icon icon>mdi-arrow-down</v-icon>
+        <v-icon icon>mdi-refresh</v-icon>
         </v-btn>
       </h1>
       <br />
-      <div v-for="noticia in news" v-bind:key="noticia.id">
+
+      <div class="testenoticias" v-for="noticia in news" v-bind:key="noticia.id">
         <br />
         <v-hover v-slot:default="{ hover }">
           <v-card
@@ -125,69 +146,33 @@
             </div>
           </v-card>
         </v-hover>
-      </div>Noticias de:
-      <a href="https://globoesporte.globo.com/futebol/" target="_blank">globoesporte</a>
+      </div>
+      
+      <div class="noticiasde">
+      Noticias de:
+      <a  href="https://globoesporte.globo.com/futebol/" target="_blank">globoesporte</a>
+      </div>
 
-      <!-- Fim teste -->
-
-      <!-- <h1 align="center">
-        NEWS FROM:
-        <a href="https://globoesporte.globo.com/futebol/" target="_blank">globoesporte</a>
-      </h1>
-      <br />
-
-      <v-layout wrap justify-space-around>
-        <div v-for="noticia in news" v-bind:key="noticia.id">
-          <v-hover v-slot:default="{ hover }">
-            <v-card
-              :elevation="hover ? 16 : 1"
-              class="mx-auto"
-              min-width="380"
-              max-width="380"
-              outlined
-            >
-              <div>
-                <v-list-item three-line>
-                  <v-list-item-content>
-                    <v-list-item-title class="headline mb-1">TITULO: {{noticia.title}}</v-list-item-title>
-                    <v-list-item-subtitle>RESUMO: {{noticia.summary}}</v-list-item-subtitle>
-                    <v-spacer></v-spacer>
-                    <v-list-item-subtitle>
-                      <img :src="noticia.image" width="200px" height="100px" />
-                    </v-list-item-subtitle>
-                    <br />
-                    <p></p>
-                  </v-list-item-content>
-
-                  <v-list-item-avatar tile size="80" :src="noticia.image"></v-list-item-avatar>
-                </v-list-item>
-
-                <v-card-actions>
-                  <v-spacer></v-spacer>
-                  <div class="overline mb-4">
-                    <a :href="noticia.link">
-                      <v-btn>Noticia</v-btn>
-                    </a>
-                  </div>
-
-                  <v-spacer></v-spacer>
-                </v-card-actions>
-              </div>
-            </v-card>
-          </v-hover>
-        </div>
-      </v-layout>-->
-
+      
       <!-- NOTICIAS ACABA AQUI -->
+
       <br />
       <br />
       <br />
       <br />
 
       <!-- Frase de efeito -->
-      <div align="center" class="fraseefeito"></div>
+      <div class="fraseefeito"> 
+        <br><br><br><br><br><br>
+        <div class="fraseprincipal">"O dificil, o extraordinario, não é fazer mil gols como Pelé. É fazer um gol como Pelé."</div>
+        <br>
+        - Carlos Drummond de Andrade -
+      </div>
       <!-- FIm frase de efeito -->
 
+      <br>
+      <br>
+      
       <!-- Dropdown -->
       <div class="text-center">
         <v-menu offset-y>
@@ -221,7 +206,7 @@
         </v-menu>
         <br>
         <br><br><br><br>
-        <v-menu offset-y>
+        <!-- <v-menu offset-y>
           <template v-slot:activator="{ on }">
             <v-btn dark v-on="on">Mauricio</v-btn>
           </template>
@@ -280,7 +265,7 @@
               >Desenvolvimento Web II</a>
             </v-list-item-title>
           </v-list>
-        </v-menu>
+        </v-menu> -->
       </div>
       <!-- Fim dropdown -->
     </section>
@@ -300,7 +285,7 @@ export default {
       items: [
         {
           src:
-            "https://media.istockphoto.com/photos/professional-football-soccer-player-isolated-white-background-picture-id959488590"
+            "https://image.freepik.com/fotos-gratis/jogador-de-futebol-forte-com-bola-de-futebol-no-fundo-branco-isolado_1368-17780.jpg"
         },
         {
           src:
@@ -308,7 +293,7 @@ export default {
         },
         {
           src:
-            "https://media.istockphoto.com/photos/professional-african-football-soccer-player-isolated-on-white-picture-id1127789263"
+            "https://media.istockphoto.com/photos/professional-african-football-soccer-player-isolated-on-white-picture-id1127748759"
         },
         {
           src:
