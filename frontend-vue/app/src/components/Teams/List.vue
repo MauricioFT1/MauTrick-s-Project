@@ -1,6 +1,13 @@
+<style>
+.backtimes{
+  color: black;
+}
+</style>
+
 <template>
+<v-parallax src="../../img/back.jpg" height="1900">
   <v-container fluid grid-list-xl>
-    <h1 align="center">TEAMS</h1>
+    <h1 class="Titulo" align="center">Times</h1>
     <v-layout wrap justify-space-around>
       <v-flex v-for="team in teams" v-bind:key="team.id">
         <v-hover v-slot:default="{ hover }">
@@ -61,6 +68,7 @@
       </v-flex>
     </v-layout>
   </v-container>
+</v-parallax>
 </template>
 
 
