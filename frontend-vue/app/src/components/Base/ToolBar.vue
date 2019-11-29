@@ -55,7 +55,7 @@ export default {
         // { title: "Home ", endpoint: "/" },
         // { title: "My Account", endpoint: "/user" },
         // { title: "Users", endpoint: "/users" },
-        { title: "Championships", endpoint: "/championships" },
+        { title: "Championships", endpoint: "/editionc" },
         { title: "Teams", endpoint: "/teams" },
         { title: "Origem", endpoint: "/origem" },
         { title: "Copas", endpoint: "/copa" },

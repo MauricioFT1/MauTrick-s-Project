@@ -1,14 +1,60 @@
 <template>
   <v-container>
-      <div v-for="edition in editions" v-bind:key="edition.id">
-        <p>{{edition.championship}}</p>
-        <v-btn class="ma-2" text icon color="red lighten-2">
-          <v-icon class="delete" @click="findTeam(1)"></v-icon>
-        </v-btn>
-        <v-text>{{team}}</v-text>
+      <div v-for="editionC in editionsChamp" v-bind:key="editionC.id">
+        {{editionC.edition}}
         <v-btn class="ma-2" text icon color="green">
-          <v-icon class="edit" @click="editChampionship(championship)"></v-icon>
+          <v-icon class="mdi-information-outline" @click="findEdition(editionC.edition), findChampionship(editionC.championship)">mdi-information-outline</v-icon>
         </v-btn>
+        <p>Campeonato: {{champ.name}}</p>
+        <p>Descrição: {{champ.description}}</p>
+        <p>Data de começo: {{edicao.date}}</p>
+        <p>Número da edição: {{edicao.number}}</p>
+        <p>Participantes: </p>
+        <v-text v-for="part in edicao.participants" v-bind:key="part.id">
+        <li>{{part}}
+          <v-dialog
+        v-model="dialog"
+        width="500"
+      >
+          <template v-slot:activator="{ on }">
+          <v-btn class="ma-2" text v-on="on" @click="findTeam(part)">
+          <v-icon class="mdi-information-outline">mdi-information-outline</v-icon>
+            INFO
+          </v-btn>
+          </template>
+         <v-card>
+          <v-card-title
+            class="headline grey lighten-2"
+            primary-title
+          >
+            {{team.name}}
+          </v-card-title>
+  
+          <v-card-text>
+            <br>
+           <p>Estádio: {{team.stadium}}</p>
+           <p>Fundação: {{team.foundation}}</p>
+          </v-card-text>
+  
+          <v-divider></v-divider>
+  
+          <v-card-actions>
+            <v-spacer></v-spacer>
+            <v-btn
+              color="primary"
+              text
+              @click="dialog = false"
+            >
+              I accept
+            </v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
+
+        </li>
+        </v-text>
+
+        
         <v-divider></v-divider>
       </div>
       <CreateChampionships @updateChampionships="all"></CreateChampionships>
@@ -24,13 +70,17 @@ export default {
   name: "EditionC",
   data() {
     return {
-      editions: [],
+      dialog: false,
+      editionsChamp: [],
       team: [],
+      edicao: [],
+      champ: [],
     };
   },
   created() {
     this.all();
-    this.findTeam();
+    // this.findTeam();
+    // this.findEdition(editionsChamp.edition);
   },
   methods: {
     all() {
@@ -38,17 +88,17 @@ export default {
         .request({
           baseURL: "http://127.0.0.1:8000/",
           method: "get",
-          url: "/api/editions/"
+          url: "/api/editionschamp/"
         })
         .then(response => {
-          this.editions = response.data
+          this.editionsChamp = response.data
           console.log(response)
         });
     },
     findTeam(teamid) {
       axios
         .request({
-          baseURL: "http://127.0.0.1:8000/",
+          baseURL: "http://127.0.0.1:8000",
           method: "get",
           url: `/api/teams/get/${teamid}/`,
         })
@@ -57,6 +107,31 @@ export default {
           console.log(response)
         });
     }
-  }
+  ,
+  findChampionship(champid) {
+      axios
+        .request({
+          baseURL: "http://127.0.0.1:8000",
+          method: "get",
+          url: `/api/championships/get/${champid}/`,
+        })
+        .then(response => {
+          this.champ = response.data
+          console.log(response)
+        });
+    }
+  ,
+  findEdition(editionid) {
+      axios
+        .request({
+          baseURL: "http://127.0.0.1:8000",
+          method: "get",
+          url: `/api/editions/get/${editionid}/`,
+        })
+        .then(response => {
+          this.edicao = response.data
+          console.log(response)
+        });
+    }}
 };
 </script>
