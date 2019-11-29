@@ -15,11 +15,10 @@
   border-top: 150px solid white;
 }
 .fraseefeito {
-  height: 600px;
-  background-image: url("https://brunorabello.com.br/wp-content/uploads/2015/10/steve-jobs.jpg");
-  font-size: 16px;
-  background-size: 1200px;
-  text-align: center;
+  margin-left: 250px;
+  height: 500px;
+  background-image: url("https://www.belasmensagens.com.br/wp-content/uploads/1970/01/fazer-mil-gols-400x300.jpg");
+  background-size: 800px;
 }
 </style>
 <template>
@@ -80,7 +79,9 @@
       <h1 align="center">
         Notícias de ultima hora!
         <br />
-        <v-btn href="http://127.0.0.1:8000/api/noticiasmontar/" target="_blank">Atualizar</v-btn>
+        <v-btn title="Atualizar Noticias" href="http://127.0.0.1:8000/api/noticiasmontar/" target="_blank">
+        <v-icon icon>mdi-arrow-down</v-icon>
+        </v-btn>
       </h1>
       <br />
       <div v-for="noticia in news" v-bind:key="noticia.id">
@@ -218,9 +219,11 @@
             </v-list-item-title>
           </v-list>
         </v-menu>
+        <br>
+        <br><br><br><br>
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn dark v-on="on">Links do curso</v-btn>
+            <v-btn dark v-on="on">Mauricio</v-btn>
           </template>
           <v-list class="dropdown">
             <v-list-item-title>
@@ -251,7 +254,7 @@
 
         <v-menu offset-y>
           <template v-slot:activator="{ on }">
-            <v-btn dark v-on="on">Links do curso</v-btn>
+            <v-btn dark v-on="on">Patrick</v-btn>
           </template>
           <v-list class="dropdown">
             <v-list-item-title>

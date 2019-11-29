@@ -18,15 +18,12 @@ table {
 
 td,
 th {
-  border-: 1px solid #dddddd;
+  border-left: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
   width: 10%;
 }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
 </style>
 
 <template>

@@ -38,14 +38,14 @@ export default {
     return {
       icons: [
         {
-          title: "Facebook",
-          icone: "mdi-facebook-box",
+          title: "Prof. Eduardo",
+          icone: "mdi-account",
           link:
             "https://sites.google.com/view/eduardodasilva/ensino/desenvolvimento-web-ii"
         },
-        { title: "Twitter", icone: "mdi-twitter-box", link: "" },
-        { title: "Google", icone: "mdi-google-plus-box", link: "" },
-        { title: "LinkedIn", icone: "mdi-linkedin-box", link: "" },
+        { title: "github", icone: "mdi-github-circle", link: "https://github.com/MauricioFT1/django-vue" },
+        { title: "IFC", icone: "mdi-city", link: "" },
+        { title: "LinkedIn", icone: "mdi-linkedin-box", link: "http://ifc.edu.br/" },
         { title: "Instagram", icone: "mdi-instagram", link: "" }
       ]
     };
