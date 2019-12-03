@@ -1,38 +1,25 @@
-<style>
-.fundo{
-  background-image: url('../img/brasil.jpg');
-  height: 600px;
-}
-
-.dimeimg{
-  margin-left: 40px;
-}
-</style>
-
 <template>
   <div class="fundo">
-    
-  <v-container class="fill-height" fluid>
-      
-    <v-spacer></v-spacer>
-    <v-row align="center" justify="center">
-      <v-col cols="12" sm="8" md="5">
-        <AlertMsg v-if="errorShow" >
-          Login or password wrong
-        </AlertMsg>
-        <v-hover v-slot:default="{ hover }">
-        <v-card :elevation="hover ? 16 : 2" class="elevation-20">
-          <LoginToolbar />
-          <LoginFields ref="formFields"
-            @fillCredentials="fillCredentials"
-          />          
-          <LoginButtons @login="login"/>
-        </v-card>
-        </v-hover>
-      </v-col>
-    </v-row>
-  </v-container>
-    
+    <v-container class="fill-height" fluid>
+      <v-spacer></v-spacer>
+
+      <v-row align="center" justify="center">
+        <v-col cols="12" sm="8" md="5">
+          <AlertMsg v-if="errorShow">Login or password wrong</AlertMsg>
+
+          <!-- Inico card de login -->
+          <v-hover v-slot:default="{ hover }">
+            <v-card :elevation="hover ? 16 : 2" class="elevation-20">
+              <LoginToolbar />
+              <LoginFields ref="formFields" @fillCredentials="fillCredentials" />
+              <LoginButtons @login="login" />
+            </v-card>
+          </v-hover>
+          <!-- Final card de login -->
+          
+        </v-col>
+      </v-row>
+    </v-container>
   </div>
 </template>
 
@@ -40,25 +27,24 @@
 import router from "../router";
 import axios from "axios";
 
-import AlertMsg from '@/components/AlertMsg.vue'
-import LoginToolbar from '@/components/Login/LoginToolbar.vue'
-import LoginFields from '@/components/Login/LoginFields.vue' 
-import LoginButtons from '@/components/Login/LoginButtons.vue'
+import AlertMsg from "@/components/AlertMsg.vue";
+import LoginToolbar from "@/components/Login/LoginToolbar.vue";
+import LoginFields from "@/components/Login/LoginFields.vue";
+import LoginButtons from "@/components/Login/LoginButtons.vue";
 
- 
-export default {  
+export default {
   props: {
-    source: String,
-  }, 
-  components: {AlertMsg, LoginToolbar, LoginFields, LoginButtons},
+    source: String
+  },
+  components: { AlertMsg, LoginToolbar, LoginFields, LoginButtons },
   data: () => ({
     credentials: {},
     errorShow: false,
-    drawer: null,    
+    drawer: null
   }),
   methods: {
     fillCredentials(credentials) {
-      this.credentials = credentials
+      this.credentials = credentials;
     },
     login() {
       if (!this.$refs.formFields.$invalid) {
@@ -70,7 +56,7 @@ export default {
             router.push("/");
           })
           .catch(e => {
-            this.errorShow = true
+            this.errorShow = true;
           });
       }
     }

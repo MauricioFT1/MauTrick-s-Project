@@ -1,8 +1,3 @@
-
-<style>
-
-</style>
-
 <template>
   <v-toolbar  color="" flat >
     <v-toolbar-title> Autenticação </v-toolbar-title>

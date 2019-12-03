@@ -1,49 +1,5 @@
-<style>
-.texto {
-  font-family: fantasy;
-}
-.fundo2 {
-  height: 2700px;
-}
-.bolakick {
-  background-color: #ffffff;
-}
-.triangulo {
-  width: 0;
-  height: 0;
-  border-left: 1600px solid transparent;
-  border-top: 150px solid white;
-}
-.fraseefeito {
-  height: 400px;
-  width: 1440px;
-  background-image: url("https://image.freepik.com/free-photo/chalkboard-blackboard-dark-wallpaper-background_28629-1125.jpg");
-  text-align: center;
-  background-size: 1440px;
-  font-family: "FreeMono", monospace;
-  font-weight: bold;
-  /* https://www.belasmensagens.com.br/wp-content/uploads/1970/01/fazer-mil-gols-400x300.jpg */
-}
-
-.fraseprincipal {
-  font-size: 30px;
-}
-
-.testenoticias {
-  margin-left: 100px;
-}
-
-.noticiasde {
-  margin-left: 1120px;
-}
-
-.noticiasdeTerra {
-  margin-left: 1095px;
-}
-</style>
 <template>
   <div class="fundo2">
-    <!-- <section class="container"> -->
     <section>
       <br />
       <h3 align="center">
@@ -89,11 +45,11 @@
         </v-container>
       </v-row>
 
-      <!-- NOTICIAS COMEÇA AQUI -->
+    <!-- NOTICIAS COMEÇA AQUI -->
 
       <h1 align="center">
         Notícias de ultima hora!
-        <br />
+        <br>
         <v-btn
           title="Atualizar Noticias"
           href="http://127.0.0.1:8000/api/noticiasmontar/"
@@ -117,10 +73,6 @@
             <div>
               <v-list-item three-line>
                 <v-list-item-content>
-                  <!-- <div class="overline mb-4">LINK: {{noticia.link}}</div> -->
-                  <!-- <div class="overline mb-4">
-                  <a :href="noticia.link">NOTICIA</a>
-                  </div>-->
                   <v-row align="center" justify="center">
                     <v-row justify="space-around">
                       <v-col cols="4">
@@ -152,32 +104,23 @@
         <a href="https://globoesporte.globo.com/futebol/" target="_blank">globoesporte</a>
       </div>
 
-      <!-- NOTICIAS ACABA AQUI -->
+    <!-- NOTICIAS ACABA AQUI -->
 
-      <br />
-      <br />
-      <br />
-      <br />
+      <br><br><br><br>
 
-      <!-- Frase de efeito -->
+    <!-- Inicio frase de efeito -->
       <div class="fraseefeito">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+        <br><br><br><br><br><br>
         <div
           class="fraseprincipal"
         >"O dificil, o extraordinario, não é fazer mil gols como Pelé. É fazer um gol como Pelé."</div>
         <br />- Carlos Drummond de Andrade -
       </div>
-      <!-- FIm frase de efeito -->
+    <!-- Fim frase de efeito -->
 
-      <br />
-      <br />
+      <br><br>
 
-      <!-- Dropdown -->
+    <!-- Dropdown -->
       <v-row justify="center">
         <v-expansion-panels>
           <v-expansion-panel style="max-width:400px;">
@@ -207,14 +150,10 @@
           </v-expansion-panel>
         </v-expansion-panels>
       </v-row>
+      <br><br><br><br><br>
 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+    <!-- Fim dropdown -->
 
-      <!-- Fim dropdown -->
     </section>
   </div>
 </template>
@@ -228,7 +167,7 @@ export default {
   name: "Index",
   data() {
     return {
-      slide: '',
+      slide: "",
       news: [],
       items: [
         {
@@ -252,7 +191,7 @@ export default {
   },
   mounted() {
     this.checkAuthenticated();
-    this.all()
+    this.all();
   },
   methods: {
     all() {

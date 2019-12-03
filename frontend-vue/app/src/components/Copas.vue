@@ -1,24 +1,11 @@
-<style>
-.Titulo {
-  text-align: center;
-  color: #777;
-  font-size: 55px;
-  font-family: arial;
-  font-weight: bold;
-  text-shadow: 0 1px 0 #cccccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbbbbb,
-    0 4px 0 #b9b9b9, 0 5px 0 #aaaaaa, 0 6px 1px rgba(0, 0, 0, 0.1),
-    0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3),
-    0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25),
-    0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
-}
-</style>
-
 <template>
   <div id="app">
     <v-app id="inspire">
       <v-parallax src="../img/back.jpg" height="2400">
+      <!-- Inicio Timeline -->
         <v-timeline :dense="$vuetify.breakpoint.smAndDown">
-          <!-- Card 1 -->
+
+        <!-- Inicio Card 1 -->
           <v-timeline-item right>
             <v-hover v-slot:default="{ hover }">
               <v-card :elevation="hover ? 16 : 2" max-width="420">
@@ -73,8 +60,9 @@
               </v-card>
             </v-hover>
           </v-timeline-item>
+        <!-- Final Card 1 -->
 
-          <!-- Card 2 -->
+        <!-- Inicio Card 2 -->
           <v-timeline-item left>
             <v-hover v-slot:default="{ hover }">
               <v-card :elevation="hover ?16 : 2" class="mx-auto" max-width="420">
@@ -131,8 +119,9 @@
               </v-card>
             </v-hover>
           </v-timeline-item>
+        <!-- Final Card 2 -->
 
-          <!-- Card 3 -->
+        <!-- Inicio Card 3 -->
 
           <v-timeline-item right>
             <v-hover v-slot:default="{ hover }">
@@ -183,8 +172,9 @@
               </v-card>
             </v-hover>
           </v-timeline-item>
+        <!-- Final Card 3 -->
 
-          <!-- Card 4 -->
+        <!-- Inicio Card 4 -->
 
           <v-timeline-item left>
             <v-hover v-slot:default="{ hover }">
@@ -238,9 +228,9 @@
               </v-card>
             </v-hover>
           </v-timeline-item>
+        <!-- Final Card 4 -->
 
-          <!-- Card 5 -->
-
+        <!-- Inicio Card 5 -->
           <v-timeline-item right>
             <v-hover v-slot:default="{ hover }">
               <v-card :elevation="hover ?16 : 2" max-width="420">
@@ -298,7 +288,9 @@
               </v-card>
             </v-hover>
           </v-timeline-item>
-          <!-- Card 6 -->
+        <!-- Final Card 5 -->
+
+        <!-- Inicio Card 6 -->
           <v-timeline-item left>
             <v-hover v-slot:default="{ hover }">
               <v-card :elevation="hover ?16 : 2" class="mx-auto" max-width="420">
@@ -352,7 +344,11 @@
               </v-card>
             </v-hover>
           </v-timeline-item>
+        <!-- Final Card 6 -->
+
         </v-timeline>
+      <!-- Final Timeline -->
+      
       </v-parallax>
     </v-app>
   </div>

@@ -15,7 +15,6 @@
             <v-list-item three-line>
               <v-list-item-content>
                 
-                <!-- <div class="overline mb-4" @click="getCoach(team.coach)">>{{team.coach}}</div> -->
                 <v-list-item-title class="headline mb-1">{{team.name}}</v-list-item-title>
                 <v-list-item-subtitle>{{team.stadium}}</v-list-item-subtitle>
                 <br />
@@ -24,11 +23,6 @@
                 <br>
                 <button v-on:click="getCoach(team.coach)"> Técnico: <div v-if="coachs.id == team.coach">{{coachs.name}}</div></button>
               </v-list-item-content>
-              <!-- <v-list-item-avatar
-          tile
-          size="80"
-          color="grey"
-              ></v-list-item-avatar> -->
             </v-list-item>
 
             <v-card-actions>
@@ -38,27 +32,12 @@
                 <v-icon class="delete" @click="deleteTeam(team)"></v-icon>
               </v-btn>
 
-              <!-- <v-divider></v-divider>  -->
               <v-btn class="ma-2" text icon color="green">
                 <v-icon class="edit" @click="editTeam(team)"></v-icon>
               </v-btn>
             </v-card-actions>
           </v-card>
         </v-hover>
-        <!-- <div v-for="team in teams" v-bind:key="team.id"> 
-        <p>{{team.name}}</p>
-        <p>{{team.stadium}}</p>
-        <p>{{team.coach}}</p>
-        <p>{{team.foundation}}</p>
-        
-        <v-btn class="ma-2" text icon color="red lighten-2">
-          <v-icon class="delete" @click="deleteTeam(team)"></v-icon>
-        </v-btn>
-        <v-btn class="ma-2" text icon color="green">
-          <v-icon class="edit" @click="editTeam(team)"></v-icon>
-        </v-btn>
-        <v-divider></v-divider> 
-        </div>-->
       </v-flex>
     </v-layout>
   </v-container>

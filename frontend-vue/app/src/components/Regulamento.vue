@@ -1,19 +1,8 @@
-<style>
-.cinza {
-  background-color: #9e9e9e;
-}
-
-/* .backgroud {
-  background-image: url('../img/fundo.jpg');
-  background-size: 1004
-} */
-</style>
-
 <template>
-<!-- <v-parallax src="../img/brasil.jpg" height="1300"> -->
-
   <v-container class="backgroud" fluid>
     <v-row justify="space-around">
+
+    <!-- Inicio coluna da esquerda (Botões) -->
       <v-col cols="3">
         <v-card class="mx-right" max-width="1300" max-height="1000" outlined>
           <v-img width="1300" height="506" src="../img/brasil.jpg">
@@ -34,7 +23,9 @@
           </v-img>
         </v-card>
       </v-col>
+    <!-- Final coluna da esquerda (Botões) -->
 
+    <!-- Inicio coluna da direita (Regras) -->
       <v-col cols="7">
         <div data-spy="scroll" data-target="#navbar-exemplo3" data-offset="0">
           <h1 id="item-1">1. Regras</h1>
@@ -319,12 +310,9 @@
           <br>
         </div>
       </v-col>
+    <!-- Inicio coluna da direita (Regras) -->
+    
     </v-row>
   </v-container>
 <!-- </v-parallax> -->
 </template>
-
-<script>
-
-</script>
-

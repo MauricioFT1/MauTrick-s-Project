@@ -13,7 +13,7 @@ import Brasileirao2019 from '@/components/Brasileirao2019'
 import Brasileirao2018 from '@/components/Brasileirao2018'
 import Brasileirao2008 from '@/components/Brasileirao2008'
 import Regulamento from '@/components/Regulamento'
-import Teste from '@/components/Teste'
+import Style from '@/components/Style'
 import Teams from '@/components/Teams/List'
 import EditTeam from '@/components/Teams/Edit'
 
@@ -93,9 +93,9 @@ export default new Router({
             component: EditTeam
         },
         {
-            path: '/teste',
-            name: 'Teste',
-            component: Teste
+            path: '/style',
+            name: 'Style',
+            component: Style
         }
     ]
 })

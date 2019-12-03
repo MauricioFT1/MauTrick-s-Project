@@ -25,14 +25,13 @@
             <v-btn text dark v-on="on">Brasileirão</v-btn>
           </template>
           <v-list>
-            <v-list-item  v-for="drop in drops" :key="drop.titulo">
+            <v-list-item v-for="drop in drops" :key="drop.titulo">
               <v-btn text :to="drop.endpoint">{{drop.titulo}}</v-btn>
-                      
             </v-list-item>
           </v-list>
         </v-menu>
       </div>
-    <v-divider vertical></v-divider>
+      <v-divider vertical></v-divider>
       <v-spacer></v-spacer>
 
       <v-btn icon to="/logout" v-if="authenticated">
@@ -52,25 +51,17 @@ export default {
       authenticated: false,
       user: {},
       items: [
-        // { title: "Home ", endpoint: "/" },
-        // { title: "My Account", endpoint: "/user" },
-        // { title: "Users", endpoint: "/users" },
         { title: "Campeonatos", endpoint: "/editionc" },
         { title: "Times", endpoint: "/teams" },
         { title: "Origem", endpoint: "/origem" },
         { title: "Copas", endpoint: "/copa" },
-        // { title: "Brasileirão2019", endpoint: "/brasileirao2019" },
-        // { title: "Brasileirão2018", endpoint: "/brasileirao2018" },
-        // { title: "Brasileirão2008", endpoint: "/brasileirao2008" },
-        { title: "Regulamento", endpoint: "/regulamento" },
-        // { title: "Teste", endpoint: "/teste" }
-
+        { title: "Regulamento", endpoint: "/regulamento" }
       ],
       drops: [
         { titulo: "Brasileirão2019", endpoint: "/brasileirao2019" },
         { titulo: "Brasileirão2018", endpoint: "/brasileirao2018" },
-        { titulo: "Brasileirão2008", endpoint: "/brasileirao2008" },
-      ],
+        { titulo: "Brasileirão2008", endpoint: "/brasileirao2008" }
+      ]
     };
   },
   mounted() {

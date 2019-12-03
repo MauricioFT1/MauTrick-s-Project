@@ -1,6 +1,6 @@
 <template>
-  
   <v-app id="mautrick">
+    <!-- Inicio botão scroll to top -->
     <v-btn
       v-scroll="onScroll"
       v-show="fab"
@@ -11,21 +11,28 @@
       right
       color="primary"
       @click="toTop"
-      >
-        <v-icon>keyboard_arrow_up</v-icon>
-      </v-btn>
-      <ToolBar @toggle-drawer="$refs.drawer.drawer = !$refs.drawer.drawer"></ToolBar>
-    
+    >
+      <v-icon>keyboard_arrow_up</v-icon>
+    </v-btn>
+    <!-- Final botão scroll to top -->
+
+    <!-- Inicio ToolBar -->
+    <ToolBar @toggle-drawer="$refs.drawer.drawer = !$refs.drawer.drawer"></ToolBar>
+    <!-- Final ToolBar -->
+
     <v-content>
       <router-view></router-view>
     </v-content>
+
+    <!-- Inicio Footer-->
     <Footer @toggle-drawer="$refs.drawer.drawer = !$refs.drawer.drawer"></Footer>
+    <!-- Final Footer -->
   </v-app>
 </template>
 
 <script>
-import ToolBar from "@/components/Base/ToolBar"
-import Footer from"@/components/Base/Footer"
+import ToolBar from "@/components/Base/ToolBar";
+import Footer from "@/components/Base/Footer";
 
 export default {
   name: "App",

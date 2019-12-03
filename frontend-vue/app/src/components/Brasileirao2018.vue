@@ -4,12 +4,15 @@
         <div class="Titulo">Brasileirão 2018</div>
       <br />
       <div id="app" class="mx-12">
-        <v-app id="inspire">
-          <v-card>
-            <br />
 
+        <v-app id="inspire">
+        <!-- Inicio Tabela -->
+          <v-card>
+            <br>
             <v-data-table :headers="headers" :items="desserts"></v-data-table>
           </v-card>
+        <!-- Final Tabela -->
+
         </v-app>
       </div>
     </v-parallax>

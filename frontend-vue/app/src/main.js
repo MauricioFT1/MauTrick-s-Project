@@ -15,10 +15,10 @@ Vue.use(Vuelidate)
 
 
 const vm = new Vue({
-  el: "#app",
-  vuetify,
-  router,
-  render: h => h(App)
+    el: "#app",
+    vuetify,
+    router,
+    render: h => h(App)
 })
 
 export const EventBus = new Vue();
