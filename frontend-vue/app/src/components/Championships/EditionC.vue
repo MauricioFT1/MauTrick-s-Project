@@ -15,7 +15,7 @@
       <p>Participantes:</p>
       <v-text v-for="(part,i) in edicao.nameParticipants" v-bind:key="part.id">
         <li>
-          Time {{part}}
+          Time {{i+1}}: {{part}}
           <v-dialog v-model="dialog" width="500">
             <template v-slot:activator="{ on }">
               <v-btn class="ma-2" text v-on="on" @click="findTeam(i+1)">

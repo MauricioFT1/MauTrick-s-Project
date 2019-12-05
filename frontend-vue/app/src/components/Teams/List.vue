@@ -18,10 +18,10 @@
                 <v-list-item-title class="headline mb-1">{{team.name}}</v-list-item-title>
                 <v-list-item-subtitle>{{team.stadium}}</v-list-item-subtitle>
                 <br />
-                <p>{{team.foundation}}</p>
+                <p>Fundação: {{team.foundation}}</p>
                 <br>
                 <br>
-                <button v-on:click="getCoach(team.coach)"> Técnico: <div v-if="coachs.id == team.coach">{{coachs.name}}</div></button>
+                <p>Técnico: {{team.nameCoach}}</p>
               </v-list-item-content>
             </v-list-item>
 

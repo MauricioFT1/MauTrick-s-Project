@@ -9,5 +9,9 @@ class Team(models.Model):
     foundation = models.CharField(max_length=50, null=True)
     # president = models.OneToOneField('People', on_delete=models.CASCADE)
 
+    @property
+    def nameCoach(self):
+        return self.coach.name
+
     def __str__(self):
         return self.name

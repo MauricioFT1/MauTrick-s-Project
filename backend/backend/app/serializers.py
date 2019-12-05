@@ -36,7 +36,7 @@ class ChampionshipSerializer(serializers.ModelSerializer):
 class TeamSerializer(serializers.ModelSerializer):
     class Meta:
         model = Team
-        fields = ('id', 'name', 'stadium', 'coach', 'foundation')
+        fields = ('id', 'name', 'stadium', 'coach', 'foundation', 'nameCoach')
 
 
 class EditionSerializer(serializers.ModelSerializer):
